@@ -9,6 +9,8 @@ pip install pyinstaller
 ```
 
 Example usage:
+```
 .\pycompile.bat FILE TYPE
+```
 
 The TYPE can be either 'windowed' or 'console'
