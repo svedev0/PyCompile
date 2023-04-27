@@ -26,10 +26,10 @@ IF %2.==. GOTO NotEnoughArguments
     IF EXIST %FILE%.exe REN %FILE%.exe %FILE%_old.exe
 
     REM Compile as console app
-    IF %TYPE%==console ( pyinstaller %FILE%.py --name %FILE% %FLAGS% )
+    IF %TYPE%==-c ( pyinstaller %FILE%.py --name %FILE% %FLAGS% )
 
     REM Compile as UI app without console
-    IF %TYPE%==windowed ( pyinstaller %FILE%.py --name %FILE% --windowed %FLAGS% )
+    IF %TYPE%==-w ( pyinstaller %FILE%.py --name %FILE% --windowed %FLAGS% )
 
     REM Remove temporary working files
     DEL %FILE%.spec
