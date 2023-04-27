@@ -1,13 +1,16 @@
 # PyCompile
 
-This batch script uses pyinstaller to streamline the process of compiling Python files into executables. Please note that this script must be placed in the root directory of your Python project.
+This batch script streamlines the process of compiling Python projects into executables. Please note that this script must be placed in the root directory of your Python project.
 
-Install required modules:
+Currently, this script is only compatible with Windows. However, a Linux alternative using bash is on the roadmap.
+
+Install requirements:
 ```
+git clone https://github.com/svedev0/PyCompile
 pip install pyinstaller
 ```
 
-Example usage:
+Usage:
 ```
 .\pycompile.bat FILE TYPE
 ```
