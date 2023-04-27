@@ -15,7 +15,7 @@ Usage:
 .\pycompile.bat FILE TYPE
 ```
 
-FILE should be only the name of the file (e.g. main) without the '.py' file extension.
+FILE should be only the name of the file (e.g. main) without the `.py` file extension.
 
 TYPE can be either `-w` (for windowed mode) or `-c` (for console mode)
 
