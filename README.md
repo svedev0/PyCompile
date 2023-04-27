@@ -17,7 +17,7 @@ Usage:
 
 FILE should be only the name of the file (e.g. main) without the '.py' file extension.
 
-TYPE can be either 'windowed' or 'console'
+TYPE can be either '-w' (for windowed mode) or '-c' (for console mode)
 
 If you need help, run:
 ```
