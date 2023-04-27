@@ -1,5 +1,4 @@
 :: pycompile.bat
-:: Run .\pycompile.bat -h (or --help) for instructions
 
 @ECHO OFF
 
@@ -16,6 +15,7 @@ IF %2.==. GOTO NotEnoughArguments
 
     SET FILE=%1
     SET TYPE=%2
+    SET ICON=%3
 
     REM Flags for pyinstaller
     SET FLAGS=--clean --onefile --distpath ./ --log-level WARN
@@ -26,10 +26,22 @@ IF %2.==. GOTO NotEnoughArguments
     IF EXIST %FILE%.exe REN %FILE%.exe %FILE%_old.exe
 
     REM Compile as console app
-    IF %TYPE%==-c ( pyinstaller %FILE%.py --name %FILE% %FLAGS% )
+    IF %TYPE%==-c (
+        IF %ICON%.==. (
+            pyinstaller %FILE%.py --name %FILE% %FLAGS%
+        ) ELSE (
+            pyinstaller %FILE%.py --name %FILE% %FLAGS% --icon=%ICON%
+        )
+    )
 
     REM Compile as UI app without console
-    IF %TYPE%==-w ( pyinstaller %FILE%.py --name %FILE% --windowed %FLAGS% )
+    IF %TYPE%==-w (
+        IF %ICON%.==. (
+            pyinstaller %FILE%.py --name %FILE% %FLAGS% --windowed
+        ) ELSE (
+            pyinstaller %FILE%.py --name %FILE% %FLAGS% --windowed --icon=%ICON%
+        )
+    )
 
     REM Remove temporary working files
     DEL %FILE%.spec
@@ -43,7 +55,7 @@ GOTO End
 
 :NotEnoughArguments
     ECHO Compiling failed!
-    ECHO You must supply the file name and either 'windowed' or 'console'
+    ECHO You must supply the file name and either '-w' or '-c'
 GOTO End
 
 :Help
@@ -51,17 +63,21 @@ GOTO End
     ECHO.
     ECHO   PyCompile v1.0 (by Emanuel Kulich)
     ECHO.
-    ECHO   This script uses pyinstaller to compile Python
-    ECHO   files into executables. Make sure that you have
-    ECHO   the pyinstaller module installed before starting.
-    ECHO.
-    ECHO   Please note that this script must be placed in the
-    ECHO   root directory of your Python project.
+    ECHO   This batch script streamlines the process of
+    ECHO   compiling Python projects into executables. Please
+    ECHO   note that this script must be placed in the root
+    ECHO   directory of your Python project.
     ECHO.
     ECHO   Example usage:
-    ECHO   .\pycompile.bat FILE TYPE
+    ECHO   .\pycompile.bat FILE TYPE ICON
+    ECHO   or
+    ECHO   .\pycompile.bat main -c favicon.ico
     ECHO.
-    ECHO   The TYPE can be either 'windowed' or 'console'
+    ECHO   FILE should be only the name of the file (e.g.
+    ECHO   main) without the .py file extension.
+    ECHO.
+    ECHO   TYPE can be either -w (for windowed mode) or -c
+    ECHO   (for console mode)
     ECHO.
     ECHO =====================================================
 GOTO End
