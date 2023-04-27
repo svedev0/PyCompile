@@ -12,4 +12,6 @@ Example usage:
 .\pycompile.bat FILE TYPE
 ```
 
-The TYPE can be either 'windowed' or 'console'
+FILE should be only the name of the file (e.g. main) without the '.py' file extension.
+
+TYPE can be either 'windowed' or 'console'
