@@ -12,6 +12,8 @@ Example usage:
 .\pycompile.bat FILE TYPE
 ```
 
+If you need help, run `.\pycompile.bat -h` or `--help`
+
 FILE should be only the name of the file (e.g. main) without the '.py' file extension.
 
 TYPE can be either 'windowed' or 'console'
