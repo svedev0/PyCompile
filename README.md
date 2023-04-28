@@ -16,11 +16,11 @@ Currently, this script is only compatible with Windows. However, a Linux alterna
 
 ### Usage:
 The script takes these three arguments:
-| Argument | Definition                                                                                             |
-|:---------|:-------------------------------------------------------------------------------------------------------|
-| FILE     | This should be only the name of the entrypoint file of your program, without the `.py` file extension. |
-| TYPE     | This can be either `-w` (for windowed mode) or `-c` (for console mode)                                 |
-| ICON     | The relative path to your icon file (e.g. `assets/favicon.ico`)                                        |
+| Argument        | Definition                                                                         |
+|:----------------|:-----------------------------------------------------------------------------------|
+| FILE            | The name of the entrypoint file of your program, without the `.py` file extension. |
+| TYPE            | Either `-w` (for windowed mode) or `-c` (for console mode)                         |
+| ICON (optional) | The relative path to your icon file (e.g. `assets/favicon.ico`)                    |
 
 Example usage:
 ```
