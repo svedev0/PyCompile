@@ -68,16 +68,17 @@ GOTO End
     ECHO   note that this script must be placed in the root
     ECHO   directory of your Python project.
     ECHO.
+    ECHO   The script takes these three arguments:
+    ECHO   FILE        The name of the entrypoint file of
+    ECHO               your program, without the '.py' file
+    ECHO               extension.
+    ECHO   TYPE        Either '-w' (for windowed mode) or
+    ECHO               '-c' (for console mode)
+    ECHO   ICON        The relative path to your icon file
+    ECHO   (optional)  (e.g. 'assets/favicon.ico')
+    ECHO.
     ECHO   Example usage:
     ECHO   .\pycompile.bat FILE TYPE ICON
-    ECHO   or
-    ECHO   .\pycompile.bat main -c favicon.ico
-    ECHO.
-    ECHO   FILE should be only the name of the file (e.g.
-    ECHO   main) without the .py file extension.
-    ECHO.
-    ECHO   TYPE can be either -w (for windowed mode) or -c
-    ECHO   (for console mode)
     ECHO.
     ECHO =====================================================
 GOTO End
