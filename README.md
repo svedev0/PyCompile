@@ -2,22 +2,30 @@
 
 This batch script streamlines the process of compiling Python projects into executables. Please note that this script must be placed in the root directory of your Python project.
 
-Currently, this script is only compatible with Windows. However, a Linux alternative using bash is on the roadmap.
+Currently, this script is only compatible with Windows. However, a Linux alternative using bash could be on the roadmap. If You would like to contribute this bash script, please create a pull request.
 
-Install requirements:
-```
-git clone https://github.com/svedev0/PyCompile
-pip install pyinstaller
-```
+### Installation
+1. Clone the repository:
+    ```
+    git clone https://github.com/svedev0/PyCompile
+    ```
+2. Install the requirements:
+    ```
+    pip install pyinstaller
+    ```
 
-Usage:
-```
-.\pycompile.bat FILE TYPE
-```
+### Usage:
+The script takes these three arguments:
+| Argument | Definition                                                                                             |
+|:---------|:-------------------------------------------------------------------------------------------------------|
+| FILE     | This should be only the name of the entrypoint file of your program, without the `.py` file extension. |
+| TYPE     | This can be either `-w` (for windowed mode) or `-c` (for console mode)                                 |
+| ICON     | The relative path to your icon file (e.g. `assets/favicon.ico`)                                        |
 
-`FILE` should be only the name of the file (e.g. main) without the `.py` file extension.
-
-`TYPE` can be either `-w` (for windowed mode) or `-c` (for console mode)
+Example usage:
+```
+.\pycompile.bat FILE TYPE ICON
+```
 
 If you need help, run:
 ```
