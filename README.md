@@ -22,12 +22,16 @@ The script takes these three arguments:
 | `TYPE`            | Either `-w` (for windowed mode) or `-c` (for console mode)                         |
 | `ICON` (optional) | The relative path to your icon file (e.g. `assets/favicon.ico`)                    |
 
-Example usage:
+**Example usage:**
 ```powershell
 .\pycompile.bat FILE TYPE ICON
 ```
 
-If you need help, run:
+**If you need help, run:**
 ```powershell
 .\pycompile.bat --help
 ```
+
+**Tested with:**
+- Python 3.10 - 3.11.3
+- pyinstaller 5.10 - 5.10.1
