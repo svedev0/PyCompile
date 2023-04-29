@@ -1,4 +1,4 @@
-# PyCompile
+# ⚙️ PyCompile
 
 This batch script streamlines the process of compiling Python projects into executables. Please note that this script must be placed in the root directory of your Python project.
 
