@@ -27,20 +27,14 @@ IF %2.==. GOTO NotEnoughArguments
 
     REM Compile as console app
     IF %TYPE%==-c (
-        IF %ICON%.==. (
-            pyinstaller %FILE%.py --name %FILE% %FLAGS%
-        ) ELSE (
-            pyinstaller %FILE%.py --name %FILE% %FLAGS% --icon=%ICON%
-        )
+        IF %ICON%.==. ( pyinstaller %FILE%.py --name %FILE% %FLAGS% )
+        ELSE ( pyinstaller %FILE%.py --name %FILE% %FLAGS% --icon=%ICON% )
     )
 
     REM Compile as UI app without console
     IF %TYPE%==-w (
-        IF %ICON%.==. (
-            pyinstaller %FILE%.py --name %FILE% %FLAGS% --windowed
-        ) ELSE (
-            pyinstaller %FILE%.py --name %FILE% %FLAGS% --windowed --icon=%ICON%
-        )
+        IF %ICON%.==. ( pyinstaller %FILE%.py --name %FILE% %FLAGS% --windowed )
+        ELSE ( pyinstaller %FILE%.py --name %FILE% %FLAGS% --windowed --icon=%ICON% )
     )
 
     REM Remove temporary working files
